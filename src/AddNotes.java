@@ -70,7 +70,7 @@ public class AddNotes extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         catatan = new javax.swing.JTextArea();
         btnAdd = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
+        btnUpdates = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
@@ -262,13 +262,18 @@ public class AddNotes extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(71, 141, 241));
-        btnUpdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setText("Update");
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdates.setBackground(new java.awt.Color(71, 141, 241));
+        btnUpdates.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnUpdates.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdates.setText("Update");
+        btnUpdates.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUpdatesMouseClicked(evt);
+            }
+        });
+        btnUpdates.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
+                btnUpdatesActionPerformed(evt);
             }
         });
 
@@ -286,6 +291,11 @@ public class AddNotes extends javax.swing.JFrame {
         btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseClicked(evt);
+            }
+        });
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -312,31 +322,14 @@ public class AddNotes extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-<<<<<<< HEAD
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnAdd)
-                                    .addComponent(jButton3))
-                                .addGap(69, 69, 69)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnUpdate)
-                                    .addComponent(btnDelete))))
-                        .addGap(72, 72, 72))
-                    .addComponent(jScrollPane4))
-                .addContainerGap(32, Short.MAX_VALUE))
-=======
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(60, 60, 60))
->>>>>>> eb2258b4b7ded41b3448331de0ddaa67ab7f6dd1
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,7 +345,7 @@ public class AddNotes extends javax.swing.JFrame {
                 .addGap(71, 71, 71)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
-                    .addComponent(btnUpdate))
+                    .addComponent(btnUpdates))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -412,9 +405,9 @@ public class AddNotes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+    private void btnUpdatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }//GEN-LAST:event_btnUpdatesActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
@@ -495,7 +488,7 @@ public class AddNotes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAddMouseClicked
 
-    private void btnUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseClicked
+    private void btnUpdatesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdatesMouseClicked
         // TODO add your handling code here:
          try {
             NotesRequest request = new NotesRequest();
@@ -511,7 +504,7 @@ public class AddNotes extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Diupdate");
             e.printStackTrace();       }
-    }//GEN-LAST:event_btnUpdateMouseClicked
+    }//GEN-LAST:event_btnUpdatesMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
         // TODO add your handling code here:
@@ -640,7 +633,7 @@ public class AddNotes extends javax.swing.JFrame {
     private javax.swing.JLabel addProducts;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnUpdates;
     private javax.swing.JTextArea catatan;
     private javax.swing.JLabel dashboard;
     private javax.swing.JButton jButton25;
