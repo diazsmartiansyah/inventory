@@ -88,7 +88,7 @@ public class Schedule extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(34, 41, 50));
         jPanel17.setForeground(new java.awt.Color(255, 255, 255));
 
-        dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dashboard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
         dashboard.setText("Dashboard");
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -98,7 +98,7 @@ public class Schedule extends javax.swing.JFrame {
             }
         });
 
-        addProducts.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        addProducts.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addProducts.setForeground(new java.awt.Color(255, 255, 255));
         addProducts.setText("Add Products");
         addProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -108,7 +108,7 @@ public class Schedule extends javax.swing.JFrame {
             }
         });
 
-        orders.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        orders.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         orders.setForeground(new java.awt.Color(255, 255, 255));
         orders.setText("Orders");
         orders.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -118,12 +118,12 @@ public class Schedule extends javax.swing.JFrame {
             }
         });
 
-        schedule.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        schedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         schedule.setForeground(new java.awt.Color(255, 255, 255));
         schedule.setText("Schedule");
         schedule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        notes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        notes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         notes.setForeground(new java.awt.Color(255, 255, 255));
         notes.setText("Notes");
         notes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -133,7 +133,7 @@ public class Schedule extends javax.swing.JFrame {
             }
         });
 
-        myProfile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        myProfile.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         myProfile.setForeground(new java.awt.Color(255, 255, 255));
         myProfile.setText("My Profile");
         myProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -144,7 +144,7 @@ public class Schedule extends javax.swing.JFrame {
         });
 
         jButton25.setBackground(new java.awt.Color(71, 141, 241));
-        jButton25.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButton25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton25.setForeground(new java.awt.Color(255, 255, 255));
         jButton25.setText("Sign Out");
         jButton25.addActionListener(new java.awt.event.ActionListener() {
@@ -160,9 +160,6 @@ public class Schedule extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jButton25))
-                    .addGroup(jPanel17Layout.createSequentialGroup()
                         .addGap(44, 44, 44)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addProducts)
@@ -170,8 +167,11 @@ public class Schedule extends javax.swing.JFrame {
                             .addComponent(orders)
                             .addComponent(schedule)
                             .addComponent(notes)
-                            .addComponent(myProfile))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                            .addComponent(myProfile)))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(jButton25)))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +190,7 @@ public class Schedule extends javax.swing.JFrame {
                 .addComponent(myProfile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton25)
-                .addGap(20, 20, 20))
+                .addGap(22, 22, 22))
         );
 
         jPanel1.setBackground(new java.awt.Color(233, 235, 242));
@@ -235,23 +235,25 @@ public class Schedule extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(233, 235, 242));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Judul                 :");
 
+        judul.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         judul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 judulActionPerformed(evt);
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Detail Schedule  :");
 
         detailSchedule.setColumns(20);
+        detailSchedule.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         detailSchedule.setRows(5);
         jScrollPane2.setViewportView(detailSchedule);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Tanggal            :");
 
         tanggal.addActionListener(new java.awt.event.ActionListener() {
@@ -260,9 +262,10 @@ public class Schedule extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Mode               :");
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel4.setText("Mode                :");
 
+        mode.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         mode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 modeActionPerformed(evt);
@@ -270,19 +273,26 @@ public class Schedule extends javax.swing.JFrame {
         });
 
         btnAdd.setBackground(new java.awt.Color(71, 141, 241));
-        btnAdd.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnAdd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnAdd.setForeground(new java.awt.Color(255, 255, 255));
         btnAdd.setText("Add");
+        btnAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAdd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAddMouseClicked(evt);
             }
         });
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
 
         btnUpdate.setBackground(new java.awt.Color(71, 141, 241));
-        btnUpdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
         btnUpdate.setText("Update");
+        btnUpdate.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnUpdate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnUpdateMouseClicked(evt);
@@ -290,14 +300,16 @@ public class Schedule extends javax.swing.JFrame {
         });
 
         jButton3.setBackground(new java.awt.Color(71, 141, 241));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Reset");
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnDelete.setBackground(new java.awt.Color(71, 141, 241));
-        btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnDelete.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
+        btnDelete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -318,26 +330,24 @@ public class Schedule extends javax.swing.JFrame {
                         .addComponent(judul))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tanggal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(jButton3))
-                            .addComponent(btnAdd, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(mode, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnDelete)
-                                    .addComponent(btnUpdate)))))
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(mode, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane2))
                 .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(61, 61, 61))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,15 +368,15 @@ public class Schedule extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(mode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addGap(79, 79, 79)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
-                    .addComponent(btnUpdate))
-                .addGap(34, 34, 34)
+                    .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(btnDelete))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(75, 75, 75))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -505,6 +515,10 @@ public class Schedule extends javax.swing.JFrame {
             System.out.println("Error : " + e.getMessage());
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddActionPerformed
 
     public final void setTable() {
         tableModel = new DefaultTableModel(
