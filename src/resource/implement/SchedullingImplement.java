@@ -28,8 +28,7 @@ public class SchedullingImplement implements SchedullingInterface {
             listSchedulling= service.getList(schedullingRequest);
            
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
-        }
+            e.printStackTrace();       }
         return listSchedulling;
     }
     
@@ -39,8 +38,7 @@ public class SchedullingImplement implements SchedullingInterface {
         try {
             schedulling = service.store(scheduleRequest);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return schedulling;
     }
@@ -51,8 +49,7 @@ public class SchedullingImplement implements SchedullingInterface {
         try {
             schedulling = service.getDetail(id);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return schedulling;
     }
@@ -63,8 +60,7 @@ public class SchedullingImplement implements SchedullingInterface {
         try {
             schedulling = service.update(schedullingRequest);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return schedulling;
     }
@@ -75,8 +71,7 @@ public class SchedullingImplement implements SchedullingInterface {
         try {
             status = service.delete(idBarang);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-             status = false;
+             e.printStackTrace();            status = false;
         }
         
         return status;

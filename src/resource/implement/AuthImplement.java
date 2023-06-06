@@ -29,8 +29,7 @@ public class AuthImplement implements AuthInterface {
 
             return true;
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
-            e.printStackTrace();
+            e.printStackTrace();           e.printStackTrace();
             return false;
         }
     }
@@ -42,8 +41,7 @@ public class AuthImplement implements AuthInterface {
             
             return logout;
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
-            return false;
+            e.printStackTrace();           return false;
         }
     }
 
@@ -53,8 +51,7 @@ public class AuthImplement implements AuthInterface {
             User user = service.getUserByToken(SessionHelper.getCurrentToken());
             return user;
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
-            return new User();
+            e.printStackTrace();           return new User();
         }
     }
     

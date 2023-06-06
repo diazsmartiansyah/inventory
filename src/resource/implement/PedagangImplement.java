@@ -25,8 +25,7 @@ public class PedagangImplement implements PedagangInterface {
         try {
             pedagang = service.getDetail(id);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return pedagang;
     }

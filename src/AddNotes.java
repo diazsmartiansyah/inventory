@@ -29,6 +29,7 @@ public class AddNotes extends javax.swing.JFrame {
     private DefaultTableModel tableModel;
     private Notes[] listNotes;
     private Notes updateNotes;
+    private int selectedRow;
     
     /**
      * Creates new form notes
@@ -192,26 +193,24 @@ public class AddNotes extends javax.swing.JFrame {
 
         tableNotes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Judul", "Catatan", "Tanggal"
+                "ID", "Judul", "Catatan", "Tanggal"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        tableNotes.setColumnSelectionAllowed(true);
         jScrollPane3.setViewportView(tableNotes);
-        tableNotes.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -322,10 +321,10 @@ public class AddNotes extends javax.swing.JFrame {
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(btnAdd)
                                     .addComponent(jButton3))
-                                .addGap(46, 46, 46)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGap(69, 69, 69)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnUpdate)
+                                    .addComponent(btnDelete))))
                         .addGap(72, 72, 72))
                     .addComponent(jScrollPane4))
                 .addContainerGap(32, Short.MAX_VALUE))
@@ -491,29 +490,30 @@ public class AddNotes extends javax.swing.JFrame {
     private void btnUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseClicked
         // TODO add your handling code here:
          try {
-            Notes notes = service.update((NotesRequest) updateNotes);
+            NotesRequest request = new NotesRequest();
+            request.setId(listNotes[selectedRow].getId());
+            request.setJudul(judul.getText());
+            request.setIsiCatatan(catatan.getText());
+            request.setTanggalDibuat(listNotes[selectedRow].getTanggalDibuat());
+            request.setPedagangId(listNotes[selectedRow].getPedagangId());
+            
+            Notes notes = service.update(request);
             JOptionPane.showMessageDialog(this, "Data Berhasil Diupdate");
             refreshTable();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Diupdate");
-            System.out.println("Error : " + e.getMessage());
-        }
+            e.printStackTrace();       }
     }//GEN-LAST:event_btnUpdateMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
         // TODO add your handling code here:
         try {
-            boolean status = service.delete(updateNotes.getId());
-            if(status) {
-                JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
-                listNotes[0] = null;
-                refreshTable();
-            } else {
-                JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
-            }
+            boolean status = service.delete(listNotes[selectedRow].getId());
+            JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
+            refreshTable();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Dihapus");
-            System.out.println("Error : " + e.getMessage());
+            e.printStackTrace();
         }
     }//GEN-LAST:event_btnDeleteMouseClicked
 
@@ -526,6 +526,20 @@ public class AddNotes extends javax.swing.JFrame {
         NotesRequest request = new NotesRequest();
         
         listNotes = service.getList(request);
+        
+        System.out.println(listNotes);
+        for(Notes notes : listNotes) {
+            if(notes == null) {
+                continue;
+            }
+            
+            Object[] rowData = {
+                    notes.getJudul(),
+                    notes.getIsiCatatan(),
+                    notes.getTanggalDibuat()
+            };
+            tableModel.addRow(rowData);
+        }
 
         tableNotes.setModel(tableModel);
         
@@ -534,11 +548,12 @@ public class AddNotes extends javax.swing.JFrame {
         tableNotes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                int selectedRow = tableNotes.getSelectedRow();
-                if (selectedRow != -1) {
+                int selected = tableNotes.getSelectedRow();
+                if (selected != -1) {
                     // Handle row selection here
-                    Notes selectedNotes = listNotes[selectedRow];
+                    Notes selectedNotes = listNotes[selected];
                     updateNotes = selectedNotes;
+                    selectedRow = selected;
                     setData();
                 }
             }
@@ -550,6 +565,8 @@ public class AddNotes extends javax.swing.JFrame {
         tableModel.setRowCount(0);
         
         NotesRequest request = new NotesRequest();
+        
+        listNotes = service.getList(request);
         
         for(Notes notes : listNotes) {
             if(notes == null) {
@@ -575,6 +592,40 @@ public class AddNotes extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                AddNotes dashboard = new AddNotes();
+                dashboard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                dashboard.setSize(500, 500);
+                dashboard.setVisible(true);
+            }
+        });
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

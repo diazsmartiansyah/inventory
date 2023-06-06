@@ -48,7 +48,7 @@ public class ApiHelper {
             
             if(response.isSuccessful()) {
                 DatatableResponse apiResponse = response.body();
-                
+                System.out.println("Debug body : " + response.body().getRecordsTotal());
                 return apiResponse;
             }  else {
                 System.out.println("API request failed. Response code: " + response.code());

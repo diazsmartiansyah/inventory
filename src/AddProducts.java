@@ -563,8 +563,7 @@ public class AddProducts extends javax.swing.JInternalFrame {
             refreshTable();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Diupdate");
-            System.out.println("Error : " + e.getMessage());
-        }
+            e.printStackTrace();       }
     }//GEN-LAST:event_btnUpdateMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
@@ -579,8 +578,7 @@ public class AddProducts extends javax.swing.JInternalFrame {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Dihapus");
-            System.out.println("Error : " + e.getMessage());
-        }
+            e.printStackTrace();       }
     }//GEN-LAST:event_btnDeleteMouseClicked
 
     private String convertToBase64(File file) throws IOException {

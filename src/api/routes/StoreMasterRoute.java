@@ -33,7 +33,7 @@ public interface StoreMasterRoute {
     @POST("produk/get-list")
     Call<DatatableResponse> getListBarang(@Body BarangRequest barangRequest);
     
-    @POST("produk/")
+    @POST("produk")
     Call<ApiResponse> storeBarang(@Body BarangRequest barangRequest);
     
     @POST("produk/update/{id}")
@@ -57,7 +57,7 @@ public interface StoreMasterRoute {
     @POST("notes/get-list")
     Call<DatatableResponse> getListNotes(@Body NotesRequest notesRequest);
     
-    @POST("notes/")
+    @POST("notes")
     Call<ApiResponse> storeNotes(@Body NotesRequest notesRequest);
     
     @POST("notes/update/{id}")
@@ -73,7 +73,7 @@ public interface StoreMasterRoute {
     @POST("schedulling/get-list")
     Call<DatatableResponse> getListSchedulling(@Body SchedullingRequest scheduleRequest);
     
-    @POST("schedulling/")
+    @POST("schedulling")
     Call<ApiResponse> storeSchedulling(@Body SchedullingRequest scheduleRequest);
     
     @POST("schedulling/update/{id}")

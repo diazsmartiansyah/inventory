@@ -11,7 +11,6 @@ import api.responses.DatatableResponse;
 import api.routes.StoreMasterRoute;
 import app.helpers.ApiHelper;
 import app.helpers.RetrofitHelper;
-import app.models.Barang;
 import app.models.Notes;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -36,15 +35,15 @@ public class NotesService implements NotesInterface {
         Call<DatatableResponse> call = route.getListNotes(notesRequest);
         DatatableResponse response = ApiHelper.hitApi(call, true);
         Object[] listObject = response.getData(Notes.class);
-        Notes[] listNotes = new Notes[listObject.length];
+        System.out.println("check" +listObject.length);
+        Notes[] listNote = new Notes[listObject.length];
         
-        int i = 0;
-        for(Object obj: listObject) {
-            listNotes[i] = (Notes) obj;
-            i++;
+        for(int i = 0   ; i < listObject.length; i++) {
+//            if(i == 2) break;
+            listNote[i] = (Notes) listObject[i];
         }
 
-        return listNotes;
+        return listNote;
     }
     
     @Override
