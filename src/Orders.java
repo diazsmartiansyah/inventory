@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class Orders extends javax.swing.JFrame {
     private Dashboard dashboardFrame;
-    private AddProducts addProductFrame;
+    private addProduct addProductFrame;
     private Orders ordersFrame;
     private Schedule scheduleFrame;
     private AddNotes noteFrame;
@@ -405,7 +405,7 @@ public class Orders extends javax.swing.JFrame {
 
     private void addProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addProductsMouseClicked
         // TODO add your handling code here:
-        addProductFrame = new AddProducts();
+        addProductFrame = new addProduct();
         addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         addProductFrame.setVisible(true);
     

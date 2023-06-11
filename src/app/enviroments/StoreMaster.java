@@ -9,6 +9,6 @@ package app.enviroments;
  * @author kelompok_4_pbo
  */
 public class StoreMaster {
-    public static String apiUrl = "https://storemasters.my.id/api/";
+    public static String apiUrl = "http://127.0.0.1:8000/api/";
     public static String bearerToken = "";
 }

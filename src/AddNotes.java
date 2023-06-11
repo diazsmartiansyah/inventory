@@ -21,7 +21,7 @@ import resource.implement.NotesImplement;
  */
 public class AddNotes extends javax.swing.JFrame {
     private Dashboard dashboardFrame;
-    private AddProducts addProductFrame;
+    private addProduct addProductFrame;
     private Orders ordersFrame;
     private Schedule scheduleFrame;
     private Profil profileFrame;
@@ -424,7 +424,7 @@ public class AddNotes extends javax.swing.JFrame {
 
     private void addProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addProductsMouseClicked
         // TODO add your handling code here:
-        addProductFrame = new AddProducts();
+        addProductFrame = new addProduct();
         addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         addProductFrame.setVisible(true);
     

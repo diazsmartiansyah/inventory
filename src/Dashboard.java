@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 public class Dashboard extends javax.swing.JFrame {
     
 //    private final Dashboard dashboardFrame;
-    private AddProducts addProductFrame;
+    private addProduct addProductFrame;
     private Orders ordersFrame;
     private Schedule scheduleFrame;
     private AddNotes noteFrame;
@@ -168,6 +168,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(233, 235, 242));
 
+        jPanel2.setBackground(new java.awt.Color(71, 141, 241));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Total Orders");
 
@@ -194,6 +196,8 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
+
+        jPanel3.setBackground(new java.awt.Color(71, 141, 241));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Total Income");
@@ -227,6 +231,8 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
+
+        jPanel4.setBackground(new java.awt.Color(71, 141, 241));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Available Products");
@@ -308,13 +314,9 @@ public class Dashboard extends javax.swing.JFrame {
 
     private void addProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addProductMouseClicked
         // TODO add your handling code here:
-        try {
-            addProductFrame = new AddProducts();
-            addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-            addProductFrame.setVisible(true);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        addProductFrame = new addProduct();
+        addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        addProductFrame.setVisible(true);
 
         // Menutup form dashboard
         this.setVisible(false);

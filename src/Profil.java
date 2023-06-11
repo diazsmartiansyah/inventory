@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class Profil extends javax.swing.JFrame {
     private final Dashboard dashboardFrame;
-    private final AddProducts addProductFrame;
+    private final addProduct addProductFrame;
     private final Orders ordersFrame;
     private final Schedule scheduleFrame;
     private final AddNotes noteFrame;
@@ -27,7 +27,7 @@ public class Profil extends javax.swing.JFrame {
         dashboardFrame = new Dashboard();
         dashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
-        addProductFrame = new AddProducts();
+        addProductFrame = new addProduct();
         addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
         ordersFrame = new Orders();
