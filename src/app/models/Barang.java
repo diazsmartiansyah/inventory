@@ -34,6 +34,12 @@ public class Barang {
     @SerializedName("kategori")
     private String kategori;
     
+    @SerializedName("deskripsi")
+    private String deskripsi;
+    
+    @SerializedName("kategori_id")
+    private int kategori_id;
+    
     @SerializedName("foto")
     private String foto;
     
@@ -129,5 +135,21 @@ public class Barang {
 
     public void setUpdated_at(String updated_at) {
         this.updated_at = updated_at;
+    }
+
+    public int getKategori_id() {
+        return kategori_id;
+    }
+
+    public void setKategori_id(int kategori_id) {
+        this.kategori_id = kategori_id;
+    }
+
+    public String getDeskripsi() {
+        return deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 }

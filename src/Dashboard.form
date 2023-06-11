@@ -183,7 +183,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\andhi\Downloads\Compressed\calendar-line.png"/>
+              <Image iconType="3" name="/app/resources/icon/calendar-line.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Schedule"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -201,9 +201,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\andhi\Downloads\Compressed\file-line.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Notes"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -330,9 +327,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\andhi\Downloads\Compressed\shopping-cart-2-line.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Total Orders"/>
               </Properties>
             </Component>
@@ -392,9 +386,6 @@
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\andhi\Downloads\Compressed\wallet-3-line.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Total Income"/>
               </Properties>
@@ -463,9 +454,6 @@
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\andhi\Downloads\Compressed\instance-line.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Available Products"/>
               </Properties>

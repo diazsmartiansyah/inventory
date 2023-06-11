@@ -93,7 +93,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         schedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         schedule.setForeground(new java.awt.Color(255, 255, 255));
-        schedule.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\calendar-line.png")); // NOI18N
+        schedule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-line.png"))); // NOI18N
         schedule.setText("Schedule");
         schedule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         schedule.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -104,7 +104,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         notes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         notes.setForeground(new java.awt.Color(255, 255, 255));
-        notes.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\file-line.png")); // NOI18N
         notes.setText("Notes");
         notes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -185,7 +184,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\shopping-cart-2-line.png")); // NOI18N
         jLabel1.setText("Total Orders");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -217,7 +215,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\wallet-3-line.png")); // NOI18N
         jLabel3.setText("Total Income");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -256,7 +253,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\instance-line.png")); // NOI18N
         jLabel6.setText("Available Products");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N

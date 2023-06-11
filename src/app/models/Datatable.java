@@ -40,7 +40,7 @@ public class Datatable {
         this.recordsTotal = recordsTotal;
     }
 
-    public int getRecordsFiltered() {
+    public int getRecordsFiltered() {   
         return recordsFiltered;
     }
 
@@ -57,13 +57,12 @@ public class Datatable {
             returns = new Object[data.length];
             for(Object object: data) {
                 debug = object;
-                Object obj = gson.fromJson(object.toString(), clazz);
+                
+                Object obj = gson.fromJson(gson.toJson(object), clazz);
                 
                 returns[i] = obj;
                 i++;
-            } 
-            
-            System.out.println(returns.length);
+            }
         } catch (Exception e) {
             System.out.println("salah disini  : " + debug.toString());
             e.printStackTrace();

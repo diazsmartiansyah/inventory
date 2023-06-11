@@ -24,7 +24,15 @@ public class ApiResponse {
 
     public Object getData(Class clazz) {
         Gson gson = new Gson();
-        Object obj = gson.fromJson(data.toString(), clazz);
+        Object obj = new Object();
+        
+        try {
+            
+            obj = gson.fromJson(gson.toJson(data), clazz);
+        } catch (Exception e) {
+            obj = gson.fromJson(data.toString(), clazz);
+        }
+        
         return obj;
     }
 
