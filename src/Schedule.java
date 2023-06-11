@@ -496,8 +496,7 @@ public class Schedule extends javax.swing.JFrame {
             refreshTable();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Diupdate");
-            System.out.println("Error : " + e.getMessage());
-        }
+            e.printStackTrace();       }
     }//GEN-LAST:event_btnUpdateMouseClicked
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
@@ -512,8 +511,7 @@ public class Schedule extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Dihapus");
-            System.out.println("Error : " + e.getMessage());
-        }
+            e.printStackTrace();       }
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed

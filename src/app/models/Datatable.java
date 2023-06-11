@@ -49,12 +49,22 @@ public class Datatable {
     }
 
     public Object[] getData(Class clazz) {
-        Gson gson = new Gson();
-        Object[] returns = new Object[data.length];
-        int i = 0;
-        for(Object object: data) {
-            Object obj = gson.fromJson(object.toString(), clazz);
-            returns[i] = obj;
+        Object[] returns = {};
+        try {
+            Gson gson = new Gson();
+            System.out.println("Debug 999" + data.length);
+            int i = 0;
+            returns = new Object[data.length];
+            for(Object object: data) {
+                Object obj = gson.fromJson(object.toString(), clazz);
+                returns[i] = obj;
+                i++;
+            } 
+            
+            System.out.println(returns.length);
+        } catch (Exception e) {
+            System.out.println("salah disini");
+            e.printStackTrace();
         }
         
         return returns;

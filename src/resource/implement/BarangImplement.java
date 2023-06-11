@@ -27,8 +27,7 @@ public class BarangImplement implements BarangInterface {
             listBarang = service.getList(barangRequest);
            
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
-        }
+            e.printStackTrace();       }
         return listBarang;
     }
     
@@ -38,8 +37,7 @@ public class BarangImplement implements BarangInterface {
         try {
             barang = service.store(barangRequest);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return barang;
     }
@@ -50,8 +48,7 @@ public class BarangImplement implements BarangInterface {
         try {
             barang = service.getDetail(id);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return barang;
     }
@@ -62,8 +59,7 @@ public class BarangImplement implements BarangInterface {
         try {
             barang = service.update(barangRequest);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return barang;
     }
@@ -74,8 +70,7 @@ public class BarangImplement implements BarangInterface {
         try {
             status = service.delete(idBarang);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-             status = false;
+             e.printStackTrace();            status = false;
         }
         
         return status;

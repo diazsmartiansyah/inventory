@@ -24,17 +24,12 @@ public class NotesImplement implements NotesInterface {
     
     @Override
     public Notes[] getList(NotesRequest notesRequest) {
-        Notes notes = new Notes();
-        notes.setJudul("judul");
-        notes.setIsiCatatan("isi");
-        notes.setTanggalDibuat("2023-06-06");
-        Notes[] listNotes = {
-            notes
-        };
+        Notes[] listNotes = {};
+        
         try {
-//            listNotes= service.getList(notesRequest);
+            listNotes = service.getList(notesRequest);
         } catch (Exception e) {
-            System.out.println("Error : " + e.getMessage());
+            e.printStackTrace();       
         }
         return listNotes;
     }
@@ -45,8 +40,7 @@ public class NotesImplement implements NotesInterface {
         try {
             barang = service.store(notesRequest);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return barang;
     }
@@ -57,8 +51,7 @@ public class NotesImplement implements NotesInterface {
         try {
             notes = service.getDetail(id);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return notes;
     }
@@ -69,8 +62,7 @@ public class NotesImplement implements NotesInterface {
         try {
             notes = service.update(notesRequest);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-        }
+             e.printStackTrace();       }
         
         return notes;
     }
@@ -81,8 +73,7 @@ public class NotesImplement implements NotesInterface {
         try {
             status = service.delete(idBarang);
         } catch (Exception e) {
-             System.out.println("Error : " + e.getMessage());
-             status = false;
+             e.printStackTrace();            status = false;
         }
         
         return status;

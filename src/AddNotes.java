@@ -29,6 +29,7 @@ public class AddNotes extends javax.swing.JFrame {
     private DefaultTableModel tableModel;
     private Notes[] listNotes;
     private Notes updateNotes;
+    private int selectedRow;
     
     /**
      * Creates new form notes
@@ -69,7 +70,7 @@ public class AddNotes extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         catatan = new javax.swing.JTextArea();
         btnAdd = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
+        btnUpdates = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
 
@@ -261,13 +262,18 @@ public class AddNotes extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setBackground(new java.awt.Color(71, 141, 241));
-        btnUpdate.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setText("Update");
-        btnUpdate.addActionListener(new java.awt.event.ActionListener() {
+        btnUpdates.setBackground(new java.awt.Color(71, 141, 241));
+        btnUpdates.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnUpdates.setForeground(new java.awt.Color(255, 255, 255));
+        btnUpdates.setText("Update");
+        btnUpdates.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUpdatesMouseClicked(evt);
+            }
+        });
+        btnUpdates.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUpdateActionPerformed(evt);
+                btnUpdatesActionPerformed(evt);
             }
         });
 
@@ -285,6 +291,11 @@ public class AddNotes extends javax.swing.JFrame {
         btnDelete.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnDelete.setForeground(new java.awt.Color(255, 255, 255));
         btnDelete.setText("Delete");
+        btnDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnDeleteMouseClicked(evt);
+            }
+        });
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -317,7 +328,7 @@ public class AddNotes extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnUpdates, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(60, 60, 60))
         );
         jPanel4Layout.setVerticalGroup(
@@ -334,7 +345,7 @@ public class AddNotes extends javax.swing.JFrame {
                 .addGap(71, 71, 71)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAdd)
-                    .addComponent(btnUpdate))
+                    .addComponent(btnUpdates))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -394,9 +405,9 @@ public class AddNotes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+    private void btnUpdatesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdatesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnUpdateActionPerformed
+    }//GEN-LAST:event_btnUpdatesActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
@@ -477,32 +488,33 @@ public class AddNotes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAddMouseClicked
 
-    private void btnUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseClicked
+    private void btnUpdatesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdatesMouseClicked
         // TODO add your handling code here:
          try {
-            Notes notes = service.update((NotesRequest) updateNotes);
+            NotesRequest request = new NotesRequest();
+            request.setId(listNotes[selectedRow].getId());
+            request.setJudul(judul.getText());
+            request.setIsiCatatan(catatan.getText());
+            request.setTanggalDibuat(listNotes[selectedRow].getTanggalDibuat());
+            request.setPedagangId(listNotes[selectedRow].getPedagangId());
+            
+            Notes notes = service.update(request);
             JOptionPane.showMessageDialog(this, "Data Berhasil Diupdate");
             refreshTable();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Diupdate");
-            System.out.println("Error : " + e.getMessage());
-        }
-    }//GEN-LAST:event_btnUpdateMouseClicked
+            e.printStackTrace();       }
+    }//GEN-LAST:event_btnUpdatesMouseClicked
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
         // TODO add your handling code here:
         try {
-            boolean status = service.delete(updateNotes.getId());
-            if(status) {
-                JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
-                listNotes[0] = null;
-                refreshTable();
-            } else {
-                JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
-            }
+            boolean status = service.delete(listNotes[selectedRow].getId());
+            JOptionPane.showMessageDialog(this, "Data Berhasil Dihapus");
+            refreshTable();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Data Gagal Dihapus");
-            System.out.println("Error : " + e.getMessage());
+            e.printStackTrace();
         }
     }//GEN-LAST:event_btnDeleteMouseClicked
 
@@ -515,6 +527,20 @@ public class AddNotes extends javax.swing.JFrame {
         NotesRequest request = new NotesRequest();
         
         listNotes = service.getList(request);
+        
+        System.out.println(listNotes);
+        for(Notes notes : listNotes) {
+            if(notes == null) {
+                continue;
+            }
+            
+            Object[] rowData = {
+                    notes.getJudul(),
+                    notes.getIsiCatatan(),
+                    notes.getTanggalDibuat()
+            };
+            tableModel.addRow(rowData);
+        }
 
         tableNotes.setModel(tableModel);
         
@@ -523,11 +549,12 @@ public class AddNotes extends javax.swing.JFrame {
         tableNotes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                int selectedRow = tableNotes.getSelectedRow();
-                if (selectedRow != -1) {
+                int selected = tableNotes.getSelectedRow();
+                if (selected != -1) {
                     // Handle row selection here
-                    Notes selectedNotes = listNotes[selectedRow];
+                    Notes selectedNotes = listNotes[selected];
                     updateNotes = selectedNotes;
+                    selectedRow = selected;
                     setData();
                 }
             }
@@ -539,6 +566,8 @@ public class AddNotes extends javax.swing.JFrame {
         tableModel.setRowCount(0);
         
         NotesRequest request = new NotesRequest();
+        
+        listNotes = service.getList(request);
         
         for(Notes notes : listNotes) {
             if(notes == null) {
@@ -564,13 +593,47 @@ public class AddNotes extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                AddNotes dashboard = new AddNotes();
+                dashboard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                dashboard.setSize(500, 500);
+                dashboard.setVisible(true);
+            }
+        });
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addProducts;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btnUpdates;
     private javax.swing.JTextArea catatan;
     private javax.swing.JLabel dashboard;
     private javax.swing.JButton jButton25;
