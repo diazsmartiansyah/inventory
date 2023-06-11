@@ -6,7 +6,6 @@ package resource.implement;
 
 import api.requests.SchedullingRequest;
 import api.services.SchedullingService;
-import app.models.Barang;
 import app.models.Schedulling;
 import resource.interfaces.SchedullingInterface;
 
@@ -28,7 +27,8 @@ public class SchedullingImplement implements SchedullingInterface {
             listSchedulling= service.getList(schedullingRequest);
            
         } catch (Exception e) {
-            e.printStackTrace();       }
+            e.printStackTrace();       
+        }
         return listSchedulling;
     }
     

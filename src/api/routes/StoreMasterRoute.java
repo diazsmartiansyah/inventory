@@ -8,6 +8,7 @@ import api.requests.BarangRequest;
 import api.requests.AuthRequest;
 import api.requests.NotesRequest;
 import api.requests.SchedullingRequest;
+import api.requests.TransaksiRequest;
 import api.responses.ApiResponse;
 import api.responses.DatatableResponse;
 import retrofit2.Call;
@@ -84,4 +85,21 @@ public interface StoreMasterRoute {
     
     @POST("schedulling/detail/{id}")
     Call<ApiResponse> detailSchedulling(@Path("id") int id);
+    
+    //Route Schedule
+    @POST("transaksi/get-list")
+    Call<DatatableResponse> getListTransaksi(@Body TransaksiRequest transaksiRequest);
+    
+    @POST("transaksi")
+    Call<ApiResponse> storeTransaksi(@Body TransaksiRequest transaksiRequest);
+    
+    @POST("transaksi/update/{id}")
+    Call<ApiResponse> updateTransaksi(@Body TransaksiRequest transaksiRequest, @Path("id") int id);
+    
+    @POST("transaksi/delete/{id}")
+    Call<ApiResponse> deleteTransaksi(@Path("id") int id);
+    
+    @POST("transaksi/detail/{id}")
+    Call<ApiResponse> detailTransaksi(@Path("id") int id);
+    
 }

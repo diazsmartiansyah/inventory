@@ -160,6 +160,7 @@ public class addProduct extends javax.swing.JFrame {
         dashboardPage.setForeground(new java.awt.Color(255, 255, 255));
         dashboardPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/dashboard-line_pth.png"))); // NOI18N
         dashboardPage.setText("Dashboard");
+        dashboardPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dashboardPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dashboardPageMouseClicked(evt);
@@ -169,6 +170,7 @@ public class addProduct extends javax.swing.JFrame {
         productPage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         productPage.setForeground(new java.awt.Color(71, 141, 241));
         productPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        productPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/add-box-line.png"))); // NOI18N
         productPage.setText("Add Products");
         productPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 141, 241)));
         productPage.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -181,6 +183,7 @@ public class addProduct extends javax.swing.JFrame {
         ordersPage.setForeground(new java.awt.Color(255, 255, 255));
         ordersPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-list-3-line_pth.png"))); // NOI18N
         ordersPage.setText("Log Transaksi");
+        ordersPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ordersPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ordersPageMouseClicked(evt);
@@ -189,8 +192,9 @@ public class addProduct extends javax.swing.JFrame {
 
         schedulePage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         schedulePage.setForeground(new java.awt.Color(255, 255, 255));
-        schedulePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-line.png"))); // NOI18N
+        schedulePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-check-fill-pth.png"))); // NOI18N
         schedulePage.setText("Schedule");
+        schedulePage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         schedulePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 schedulePageMouseClicked(evt);
@@ -199,8 +203,9 @@ public class addProduct extends javax.swing.JFrame {
 
         notesPage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notesPage.setForeground(new java.awt.Color(255, 255, 255));
-        notesPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-line.png"))); // NOI18N
+        notesPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/sticky-note-line-pth.png"))); // NOI18N
         notesPage.setText("Notes");
+        notesPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notesPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 notesPageMouseClicked(evt);
@@ -211,6 +216,7 @@ public class addProduct extends javax.swing.JFrame {
         profilePage.setForeground(new java.awt.Color(255, 255, 255));
         profilePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/user-line-pth.png"))); // NOI18N
         profilePage.setText("My Profile");
+        profilePage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         profilePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 profilePageMouseClicked(evt);
@@ -258,8 +264,8 @@ public class addProduct extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(dashboardPage, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(productPage, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addComponent(productPage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(ordersPage)
                 .addGap(38, 38, 38)
                 .addComponent(schedulePage)
@@ -267,7 +273,7 @@ public class addProduct extends javax.swing.JFrame {
                 .addComponent(notesPage)
                 .addGap(43, 43, 43)
                 .addComponent(profilePage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 154, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton25)
                 .addGap(20, 20, 20))
         );
@@ -297,6 +303,7 @@ public class addProduct extends javax.swing.JFrame {
         addBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         addBtn.setForeground(new java.awt.Color(255, 255, 255));
         addBtn.setText("Add");
+        addBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addBtnMouseClicked(evt);
@@ -312,6 +319,7 @@ public class addProduct extends javax.swing.JFrame {
         updateBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         updateBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateBtn.setText("Update");
+        updateBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         updateBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 updateBtnMouseClicked(evt);
@@ -327,6 +335,7 @@ public class addProduct extends javax.swing.JFrame {
         jButton29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton29.setForeground(new java.awt.Color(255, 255, 255));
         jButton29.setText("Clear");
+        jButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton29ActionPerformed(evt);
@@ -337,6 +346,7 @@ public class addProduct extends javax.swing.JFrame {
         hapusBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         hapusBtn.setForeground(new java.awt.Color(255, 255, 255));
         hapusBtn.setText("Delete");
+        hapusBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         hapusBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 hapusBtnMouseClicked(evt);
@@ -523,7 +533,6 @@ public class addProduct extends javax.swing.JFrame {
         noteFrame = new AddNotes();
         noteFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         noteFrame.setVisible(true);
-
         // Menutup form dashboard
         this.setVisible(false);
     }//GEN-LAST:event_notesPageMouseClicked
@@ -533,7 +542,6 @@ public class addProduct extends javax.swing.JFrame {
         profileFrame = new Profil();
         profileFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         profileFrame.setVisible(true);
-
         // Menutup form dashboard
         this.setVisible(false);
     }//GEN-LAST:event_profilePageMouseClicked
