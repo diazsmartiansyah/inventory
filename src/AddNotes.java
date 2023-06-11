@@ -4,6 +4,7 @@
  */
 
 import api.requests.NotesRequest;
+import app.helpers.SessionHelper;
 import app.models.Notes;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -476,9 +477,9 @@ public class AddNotes extends javax.swing.JFrame {
         
         NotesRequest request = new NotesRequest();
         request.setJudul(judul.getText());
-        request.setIsiCatatan(judul.getText());
+        request.setIsiCatatan(catatan.getText());
         request.setTanggalDibuat(formattedDate);
-        request.setPedagangId(1);
+        request.setPedagangId(SessionHelper.getCurrentPedagang().getId());
         
         Notes notes = service.store(request);
         
