@@ -93,7 +93,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         schedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         schedule.setForeground(new java.awt.Color(255, 255, 255));
-        schedule.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\calendar-line.png")); // NOI18N
+        schedule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-check-fill-pth.png"))); // NOI18N
         schedule.setText("Schedule");
         schedule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         schedule.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -104,7 +104,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         notes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         notes.setForeground(new java.awt.Color(255, 255, 255));
-        notes.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\file-line.png")); // NOI18N
+        notes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/sticky-note-line-pth.png"))); // NOI18N
         notes.setText("Notes");
         notes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notes.addMouseListener(new java.awt.event.MouseAdapter() {

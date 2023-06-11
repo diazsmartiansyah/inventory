@@ -118,6 +118,7 @@ public class addProduct extends javax.swing.JFrame {
         dashboardPage.setForeground(new java.awt.Color(255, 255, 255));
         dashboardPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/dashboard-line_pth.png"))); // NOI18N
         dashboardPage.setText("Dashboard");
+        dashboardPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dashboardPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dashboardPageMouseClicked(evt);
@@ -140,6 +141,7 @@ public class addProduct extends javax.swing.JFrame {
         ordersPage.setForeground(new java.awt.Color(255, 255, 255));
         ordersPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-list-3-line_pth.png"))); // NOI18N
         ordersPage.setText("Log Transaksi");
+        ordersPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ordersPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ordersPageMouseClicked(evt);
@@ -148,8 +150,9 @@ public class addProduct extends javax.swing.JFrame {
 
         schedulePage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         schedulePage.setForeground(new java.awt.Color(255, 255, 255));
-        schedulePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-line.png"))); // NOI18N
+        schedulePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-check-fill-pth.png"))); // NOI18N
         schedulePage.setText("Schedule");
+        schedulePage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         schedulePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 schedulePageMouseClicked(evt);
@@ -158,8 +161,9 @@ public class addProduct extends javax.swing.JFrame {
 
         notesPage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notesPage.setForeground(new java.awt.Color(255, 255, 255));
-        notesPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-line.png"))); // NOI18N
+        notesPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/sticky-note-line-pth.png"))); // NOI18N
         notesPage.setText("Notes");
+        notesPage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notesPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 notesPageMouseClicked(evt);
@@ -170,6 +174,7 @@ public class addProduct extends javax.swing.JFrame {
         profilePage.setForeground(new java.awt.Color(255, 255, 255));
         profilePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/user-line-pth.png"))); // NOI18N
         profilePage.setText("My Profile");
+        profilePage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         profilePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 profilePageMouseClicked(evt);
@@ -217,8 +222,8 @@ public class addProduct extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(dashboardPage, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(productPage, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addComponent(productPage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(ordersPage)
                 .addGap(38, 38, 38)
                 .addComponent(schedulePage)
@@ -226,7 +231,7 @@ public class addProduct extends javax.swing.JFrame {
                 .addComponent(notesPage)
                 .addGap(43, 43, 43)
                 .addComponent(profilePage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton25)
                 .addGap(20, 20, 20))
         );
@@ -262,6 +267,7 @@ public class addProduct extends javax.swing.JFrame {
         jButton27.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton27.setForeground(new java.awt.Color(255, 255, 255));
         jButton27.setText("Add");
+        jButton27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton27.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton27ActionPerformed(evt);
@@ -272,6 +278,7 @@ public class addProduct extends javax.swing.JFrame {
         jButton28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton28.setForeground(new java.awt.Color(255, 255, 255));
         jButton28.setText("Update");
+        jButton28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton28.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton28ActionPerformed(evt);
@@ -282,6 +289,7 @@ public class addProduct extends javax.swing.JFrame {
         jButton29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton29.setForeground(new java.awt.Color(255, 255, 255));
         jButton29.setText("Clear");
+        jButton29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton29.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton29ActionPerformed(evt);
@@ -292,6 +300,7 @@ public class addProduct extends javax.swing.JFrame {
         jButton30.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jButton30.setForeground(new java.awt.Color(255, 255, 255));
         jButton30.setText("Delete");
+        jButton30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -412,27 +421,9 @@ public class addProduct extends javax.swing.JFrame {
 
     private void dashboardPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardPageMouseClicked
         // TODO add your handling code here:
-        String clickedLabel = dashboardPage.getText();
-
-        if (clickedLabel.equals("Dashboard")) {
-            Dashboard dashboardFrame = new Dashboard();
-            dashboardFrame.setVisible(true);
-        } else if (clickedLabel.equals("Add Products")) {
-            addProduct addProductFrame = new addProduct();
-            addProductFrame.setVisible(true);
-        } else if (clickedLabel.equals("Orders")) {
-            Orders OrdersFrame = new Orders();
-            OrdersFrame.setVisible(true);
-        } else if (clickedLabel.equals("Schedule")) {
-            Schedule ScheduleFrame = new Schedule();
-            ScheduleFrame.setVisible(true);
-        } else if (clickedLabel.equals("Notes")) {
-            AddNotes noteFrame = new AddNotes();
-            noteFrame.setVisible(true);
-        } else if (clickedLabel.equals("My Profile")) {
-            Profil profileFrame = new Profil();
-            profileFrame.setVisible(true);
-        }
+        dashboardFrame = new Dashboard();
+        dashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        dashboardFrame.setVisible(true);
 
         // Menutup form dashboard
         this.setVisible(false);
@@ -440,27 +431,10 @@ public class addProduct extends javax.swing.JFrame {
 
     private void productPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productPageMouseClicked
         // TODO add your handling code here:
-        String clickedLabel = productPage.getText();
-
-        if (clickedLabel.equals("Dashboard")) {
-            Dashboard dashboardFrame = new Dashboard();
-            dashboardFrame.setVisible(true);
-        } else if (clickedLabel.equals("Add Products")) {
-            addProduct addProductFrame = new addProduct();
-            addProductFrame.setVisible(true);
-        } else if (clickedLabel.equals("Orders")) {
-            Orders OrdersFrame = new Orders();
-            OrdersFrame.setVisible(true);
-        } else if (clickedLabel.equals("Schedule")) {
-            Schedule ScheduleFrame = new Schedule();
-            ScheduleFrame.setVisible(true);
-        } else if (clickedLabel.equals("Notes")) {
-            AddNotes noteFrame = new AddNotes();
-            noteFrame.setVisible(true);
-        } else if (clickedLabel.equals("My Profile")) {
-            Profil profileFrame = new Profil();
-            profileFrame.setVisible(true);
-        }
+        addProductFrame = new addProduct();
+        addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        addProductFrame.setVisible(true);
+          
 
         // Menutup form dashboard
         this.setVisible(false);
@@ -468,27 +442,9 @@ public class addProduct extends javax.swing.JFrame {
 
     private void schedulePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_schedulePageMouseClicked
         // TODO add your handling code here:
-        String clickedLabel = schedulePage.getText();
-
-        if (clickedLabel.equals("Dashboard")) {
-            Dashboard dashboardFrame = new Dashboard();
-            dashboardFrame.setVisible(true);
-        } else if (clickedLabel.equals("Add Products")) {
-            addProduct addProductFrame = new addProduct();
-            addProductFrame.setVisible(true);
-        } else if (clickedLabel.equals("Orders")) {
-            Orders OrdersFrame = new Orders();
-            OrdersFrame.setVisible(true);
-        } else if (clickedLabel.equals("Schedule")) {
-            Schedule ScheduleFrame = new Schedule();
-            ScheduleFrame.setVisible(true);
-        } else if (clickedLabel.equals("Notes")) {
-            AddNotes noteFrame = new AddNotes();
-            noteFrame.setVisible(true);
-        } else if (clickedLabel.equals("My Profile")) {
-            Profil profileFrame = new Profil();
-            profileFrame.setVisible(true);
-        }
+        scheduleFrame = new Schedule();
+        scheduleFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        scheduleFrame.setVisible(true);
 
         // Menutup form dashboard
         this.setVisible(false);
@@ -496,56 +452,20 @@ public class addProduct extends javax.swing.JFrame {
 
     private void notesPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notesPageMouseClicked
         // TODO add your handling code here:
-        String clickedLabel = notesPage.getText();
-
-        if (clickedLabel.equals("Dashboard")) {
-            Dashboard dashboardFrame = new Dashboard();
-            dashboardFrame.setVisible(true);
-        } else if (clickedLabel.equals("Add Products")) {
-            addProduct addProductFrame = new addProduct();
-            addProductFrame.setVisible(true);
-        } else if (clickedLabel.equals("Orders")) {
-            Orders OrdersFrame = new Orders();
-            OrdersFrame.setVisible(true);
-        } else if (clickedLabel.equals("Schedule")) {
-            Schedule ScheduleFrame = new Schedule();
-            ScheduleFrame.setVisible(true);
-        } else if (clickedLabel.equals("Notes")) {
-            AddNotes noteFrame = new AddNotes();
-            noteFrame.setVisible(true);
-        } else if (clickedLabel.equals("My Profile")) {
-            Profil profileFrame = new Profil();
-            profileFrame.setVisible(true);
-        }
-
+        noteFrame = new AddNotes();
+        noteFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        noteFrame.setVisible(true);
+    
         // Menutup form dashboard
         this.setVisible(false);
     }//GEN-LAST:event_notesPageMouseClicked
 
     private void profilePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profilePageMouseClicked
         // TODO add your handling code here:
-        String clickedLabel = profilePage.getText();
-
-        if (clickedLabel.equals("Dashboard")) {
-            Dashboard dashboardFrame = new Dashboard();
-            dashboardFrame.setVisible(true);
-        } else if (clickedLabel.equals("Add Products")) {
-            addProduct addProductFrame = new addProduct();
-            addProductFrame.setVisible(true);
-        } else if (clickedLabel.equals("Orders")) {
-            Orders OrdersFrame = new Orders();
-            OrdersFrame.setVisible(true);
-        } else if (clickedLabel.equals("Schedule")) {
-            Schedule ScheduleFrame = new Schedule();
-            ScheduleFrame.setVisible(true);
-        } else if (clickedLabel.equals("Notes")) {
-            AddNotes noteFrame = new AddNotes();
-            noteFrame.setVisible(true);
-        } else if (clickedLabel.equals("My Profile")) {
-            Profil profileFrame = new Profil();
-            profileFrame.setVisible(true);
-        }
-
+        profileFrame = new Profil();
+        profileFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        profileFrame.setVisible(true);
+    
         // Menutup form dashboard
         this.setVisible(false);
     }//GEN-LAST:event_profilePageMouseClicked

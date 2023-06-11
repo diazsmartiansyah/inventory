@@ -12,35 +12,18 @@ import javax.swing.JFrame;
  * @author AkbarAbe
  */
 public class Profil extends javax.swing.JFrame {
-    private final Dashboard dashboardFrame;
-    private final addProduct addProductFrame;
-    private final Orders ordersFrame;
-    private final Schedule scheduleFrame;
-    private final AddNotes noteFrame;
-    private final Profil profileFrame;
+    private addProduct addProductFrame;
+    private Orders ordersFrame;
+    private Schedule scheduleFrame;
+    private AddNotes noteFrame;
+    private Dashboard dashboardFrame;
     
     /**
      * Creates new form Profil
      */
     public Profil() {
         initComponents();
-        dashboardFrame = new Dashboard();
-        dashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
-        addProductFrame = new addProduct();
-        addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-        ordersFrame = new Orders();
-        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-        scheduleFrame = new Schedule();
-        scheduleFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-        noteFrame = new AddNotes();
-        noteFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        
-        profileFrame = this;
-        profileFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -83,9 +66,11 @@ public class Profil extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1126, 645));
 
         jPanel17.setBackground(new java.awt.Color(34, 41, 50));
         jPanel17.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel17.setPreferredSize(new java.awt.Dimension(264, 424));
 
         dashboard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
@@ -122,7 +107,7 @@ public class Profil extends javax.swing.JFrame {
 
         schedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         schedule.setForeground(new java.awt.Color(255, 255, 255));
-        schedule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-line.png"))); // NOI18N
+        schedule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-check-fill-pth.png"))); // NOI18N
         schedule.setText("Schedule");
         schedule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         schedule.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,7 +118,7 @@ public class Profil extends javax.swing.JFrame {
 
         notes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         notes.setForeground(new java.awt.Color(255, 255, 255));
-        notes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-line.png"))); // NOI18N
+        notes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/sticky-note-line-pth.png"))); // NOI18N
         notes.setText("Notes");
         notes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -168,23 +153,22 @@ public class Profil extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel17Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addProducts)
-                                    .addComponent(orders)
-                                    .addComponent(schedule)
-                                    .addComponent(notes)
-                                    .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel17Layout.createSequentialGroup()
-                                .addGap(63, 63, 63)
-                                .addComponent(jButton25)))
-                        .addGap(0, 78, Short.MAX_VALUE))
+                            .addComponent(addProducts)
+                            .addComponent(orders)
+                            .addComponent(schedule)
+                            .addComponent(notes)
+                            .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(myProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(jButton25)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,9 +185,9 @@ public class Profil extends javax.swing.JFrame {
                 .addComponent(notes)
                 .addGap(27, 27, 27)
                 .addComponent(myProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
                 .addComponent(jButton25)
-                .addGap(24, 24, 24))
+                .addGap(43, 43, 43))
         );
 
         jPanel18.setBackground(new java.awt.Color(233, 235, 242));
@@ -270,7 +254,7 @@ public class Profil extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(211, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(233, 235, 242));
@@ -302,48 +286,65 @@ public class Profil extends javax.swing.JFrame {
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setText("Profile Update");
 
-        jButton1.setBackground(new java.awt.Color(233, 235, 242));
+        jButton1.setBackground(new java.awt.Color(71, 141, 241));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(71, 141, 241));
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("change");
         jButton1.setBorder(null);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(233, 235, 242));
+        jButton2.setBackground(new java.awt.Color(71, 141, 241));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(71, 141, 241));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("change");
         jButton2.setBorder(null);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(233, 235, 242));
+        jButton3.setBackground(new java.awt.Color(71, 141, 241));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(71, 141, 241));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("change");
         jButton3.setBorder(null);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        jButton4.setBackground(new java.awt.Color(233, 235, 242));
+        jButton4.setBackground(new java.awt.Color(71, 141, 241));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(71, 141, 241));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("change");
         jButton4.setBorder(null);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(56, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addGap(159, 159, 159))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
@@ -356,16 +357,12 @@ public class Profil extends javax.swing.JFrame {
                             .addComponent(jTextField3)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1)
-                            .addComponent(jButton3)
-                            .addComponent(jButton4)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel9)
-                        .addGap(124, 124, 124)))
-                .addGap(35, 35, 35))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(19, 19, 19))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,23 +373,23 @@ public class Profil extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
-                .addContainerGap(219, Short.MAX_VALUE))
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -405,11 +402,11 @@ public class Profil extends javax.swing.JFrame {
                 .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 7, Short.MAX_VALUE))
+                .addGap(0, 8, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel17, javax.swing.GroupLayout.DEFAULT_SIZE, 645, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -433,16 +430,14 @@ public class Profil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void dashboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardMouseClicked
         // TODO add your handling code here:
+        dashboardFrame = new Dashboard();
+        dashboardFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         dashboardFrame.setVisible(true);
     
         // Menutup form dashboard
@@ -451,6 +446,8 @@ public class Profil extends javax.swing.JFrame {
 
     private void addProductsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addProductsMouseClicked
         // TODO add your handling code here:
+        addProductFrame = new addProduct();
+        addProductFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         addProductFrame.setVisible(true);
     
         // Menutup form dashboard
@@ -459,6 +456,8 @@ public class Profil extends javax.swing.JFrame {
 
     private void scheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleMouseClicked
         // TODO add your handling code here:
+        scheduleFrame = new Schedule();
+        scheduleFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         scheduleFrame.setVisible(true);
     
         // Menutup form dashboard
@@ -467,6 +466,8 @@ public class Profil extends javax.swing.JFrame {
 
     private void notesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_notesMouseClicked
         // TODO add your handling code here:
+        noteFrame = new AddNotes();
+        noteFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         noteFrame.setVisible(true);
     
         // Menutup form dashboard
@@ -475,11 +476,25 @@ public class Profil extends javax.swing.JFrame {
 
     private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
         // TODO add your handling code here:
+        ordersFrame = new Orders();
+        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         ordersFrame.setVisible(true);
 
         // Menutup form dashboard
         this.setVisible(false);
     }//GEN-LAST:event_ordersMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

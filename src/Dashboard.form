@@ -183,7 +183,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\andhi\Downloads\Compressed\calendar-line.png"/>
+              <Image iconType="3" name="/app/resources/icon/calendar-check-fill-pth.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Schedule"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -203,7 +203,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\andhi\Downloads\Compressed\file-line.png"/>
+              <Image iconType="3" name="/app/resources/icon/sticky-note-line-pth.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Notes"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
