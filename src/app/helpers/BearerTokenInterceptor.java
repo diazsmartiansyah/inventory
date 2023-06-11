@@ -25,40 +25,39 @@ public class BearerTokenInterceptor implements Interceptor {
     
     @Override
     public Response intercept(Chain chain) throws IOException {
-//        Request request = chain.request();
-//
-//        // Log the request URL and method
-//        System.out.println("--> " + request.method() + " " + request.url());
-//
-//        // Log the request headers
-//        request.headers().names().forEach(name ->
-//                System.out.println(name + ": " + request.headers().get(name))
-//        );
-//
-//        // Log the request body (if any)
-//        if (request.body() != null) {
-//            Buffer buffer = new Buffer();
-//            request.body().writeTo(buffer);
-//            System.out.println(buffer.readString(StandardCharsets.UTF_8));
-//        }
-//
-//        // Proceed with the request
-//        Response response = chain.proceed(request);
-//
-//        // Log the response status
-//        System.out.println("<-- " + response.code() + " " + response.message());
-//
-//        // Log the response headers
-//        response.headers().names().forEach(name ->
-//                System.out.println(name + ": " + response.headers().get(name))
-//        );
-//        
-//        response.close();
         
         Request originalRequest = chain.request();
         Request modifiedRequest = originalRequest.newBuilder()
-                .header("Authorization", "Bearer " + token)
+                .header("Authorization", "Bearer " + SessionHelper.getCurrentToken())
                 .build();
+
+        // Log the request URL and method
+        System.out.println("--> " + modifiedRequest.method() + " " + modifiedRequest.url());
+
+        // Log the request headers
+        modifiedRequest.headers().names().forEach(name ->
+                System.out.println(name + ": " + modifiedRequest.headers().get(name))
+        );
+
+        // Log the request body (if any)
+        if (modifiedRequest.body() != null) {
+            Buffer buffer = new Buffer();
+            modifiedRequest.body().writeTo(buffer);
+            System.out.println(buffer.readString(StandardCharsets.UTF_8));
+        }
+
+        // Proceed with the request
+        Response response = chain.proceed(modifiedRequest);
+
+        // Log the response status
+        System.out.println("<-- " + response.code() + " " + response.message());
+
+        // Log the response headers
+        response.headers().names().forEach(name ->
+                System.out.println(name + ": " + response.headers().get(name))
+        );
+        
+        response.close();
         
         return chain.proceed(modifiedRequest);
     }

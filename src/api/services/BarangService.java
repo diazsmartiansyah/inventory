@@ -36,11 +36,11 @@ public class BarangService implements BarangInterface {
         DatatableResponse response = ApiHelper.hitApi(call, true);
         Object[] listObject = response.getData(Barang.class);
         Barang[] listBarang = new Barang[listObject.length];
-        int i = 0;
-        for(Object obj: listObject) {
-            listBarang[i] = (Barang) obj;
-            i++;
+        
+         for(int i = 0 ; i < listObject.length; i++) {
+             listBarang[i] = (Barang) listObject[i];
         }
+        
         return listBarang;
     }
     

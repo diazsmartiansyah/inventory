@@ -27,7 +27,7 @@ public class Pedagang {
     private String foto;
     
     @SerializedName("is_active")
-    private boolean isActive;
+    private int isActive;
 
     public int getId() {
         return id;
@@ -69,11 +69,11 @@ public class Pedagang {
         this.foto = foto;
     }
 
-    public boolean isIsActive() {
+    public int isIsActive() {
         return isActive;
     }
 
-    public void setIsActive(boolean isActive) {
+    public void setIsActive(int isActive) {
         this.isActive = isActive;
     }
 }

@@ -24,9 +24,7 @@ public class ApiResponse {
 
     public Object getData(Class clazz) {
         Gson gson = new Gson();
-        System.out.println("Debug : "+ data);
         Object obj = gson.fromJson(data.toString(), clazz);
-        System.out.println("Debug : "+ data);
         return obj;
     }
 

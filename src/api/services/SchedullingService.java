@@ -11,6 +11,7 @@ import api.responses.DatatableResponse;
 import api.routes.StoreMasterRoute;
 import app.helpers.ApiHelper;
 import app.helpers.RetrofitHelper;
+import app.models.Notes;
 import app.models.Schedulling;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -34,8 +35,13 @@ public class SchedullingService implements SchedullingInterface {
     public Schedulling[] getList(SchedullingRequest schedullingRequest) {
         Call<DatatableResponse> call = route.getListSchedulling(schedullingRequest);
         DatatableResponse response = ApiHelper.hitApi(call, true);
-        Schedulling[] listSchedulling = (Schedulling[]) response.getData(Schedulling.class);
-
+        Object[] listObject = response.getData(Schedulling.class);
+        Schedulling[] listSchedulling = new Schedulling[listObject.length];
+        
+        for(int i = 0 ; i < listObject.length; i++) {
+            listSchedulling[i] = (Schedulling) listObject[i];
+        }
+        
         return listSchedulling;
     }
     

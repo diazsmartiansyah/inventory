@@ -35,11 +35,9 @@ public class NotesService implements NotesInterface {
         Call<DatatableResponse> call = route.getListNotes(notesRequest);
         DatatableResponse response = ApiHelper.hitApi(call, true);
         Object[] listObject = response.getData(Notes.class);
-        System.out.println("check" +listObject.length);
         Notes[] listNote = new Notes[listObject.length];
         
-        for(int i = 0   ; i < listObject.length; i++) {
-//            if(i == 2) break;
+        for(int i = 0 ; i < listObject.length; i++) {
             listNote[i] = (Notes) listObject[i];
         }
 

@@ -1,11 +1,9 @@
 
-import api.requests.BarangRequest;
-import api.requests.NotesRequest;
 import api.requests.SchedullingRequest;
 import app.helpers.SessionHelper;
-import app.models.Barang;
-import app.models.Notes;
 import app.models.Schedulling;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -36,6 +34,7 @@ public class Schedule extends javax.swing.JFrame {
     private DefaultTableModel tableModel;
     private Schedulling[] listSchedulling;
     private Schedulling updateSchedulling;
+    private int selectedRow;
     
     /**
      * Creates new form schedule
@@ -469,10 +468,14 @@ public class Schedule extends javax.swing.JFrame {
 
     private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
         // TODO add your handling code here:
+        LocalDate currentDate = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDate = currentDate.format(formatter);
+        
         SchedullingRequest request = new SchedullingRequest();
         request.setJudul(judul.getText());
         request.setIsiSchedule(detailSchedule.getText());
-        request.setTanggal(detailSchedule.getText());
+        request.setTanggal(formattedDate);
         request.setMode(mode.getText());
         request.setPedagangId(SessionHelper.getCurrentPedagang().getId());
         
@@ -491,7 +494,15 @@ public class Schedule extends javax.swing.JFrame {
     private void btnUpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUpdateMouseClicked
         // TODO add your handling code here:
         try {
-            Schedulling schedulling = service.update((SchedullingRequest) updateSchedulling);
+            SchedullingRequest request = new SchedullingRequest();
+            request.setId(listSchedulling[selectedRow].getId());
+            request.setJudul(judul.getText());
+            request.setMode(mode.getText());
+            request.setPedagangId(SessionHelper.getCurrentPedagang().getId());
+            request.setTanggal(tanggal.getText());
+            
+            Schedulling schedulling = service.update(request);
+            
             JOptionPane.showMessageDialog(this, "Data Berhasil Diupdate");
             refreshTable();
         } catch (Exception e) {
@@ -538,18 +549,19 @@ public class Schedule extends javax.swing.JFrame {
             tableModel.addRow(rowData);
         }
         
-        tableSchedule = new JTable(tableModel);
+        tableSchedule.setModel(tableModel);
         
         tableSchedule.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
         tableSchedule.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
-                int selectedRow = tableSchedule.getSelectedRow();
+                int selected = tableSchedule.getSelectedRow();
                 if (selectedRow != -1) {
                     // Handle row selection here
                     Schedulling selectedNotes = listSchedulling[selectedRow];
                     updateSchedulling = selectedNotes;
+                    selectedRow = selected;
                     setData();
                 }
             }

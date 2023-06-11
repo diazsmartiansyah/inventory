@@ -526,6 +526,7 @@ public class AddNotes extends javax.swing.JFrame {
         );
         
         NotesRequest request = new NotesRequest();
+        request.setPedagangId(SessionHelper.getCurrentPedagang().getId());
         
         listNotes = service.getList(request);
         
@@ -567,6 +568,7 @@ public class AddNotes extends javax.swing.JFrame {
         tableModel.setRowCount(0);
         
         NotesRequest request = new NotesRequest();
+        request.setPedagangId(SessionHelper.getCurrentPedagang().getId());
         
         listNotes = service.getList(request);
         
@@ -580,7 +582,7 @@ public class AddNotes extends javax.swing.JFrame {
                     notes.getIsiCatatan(),
                     notes.getTanggalDibuat()
             };
-            System.out.println("Debug 3  : " + rowData);
+            
             tableModel.addRow(rowData);
         }
         
