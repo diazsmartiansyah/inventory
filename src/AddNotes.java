@@ -82,6 +82,7 @@ public class AddNotes extends javax.swing.JFrame {
 
         dashboard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/dashboard-line_pth.png"))); // NOI18N
         dashboard.setText("Dashboard");
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dashboard.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,6 +93,7 @@ public class AddNotes extends javax.swing.JFrame {
 
         addProducts.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addProducts.setForeground(new java.awt.Color(255, 255, 255));
+        addProducts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/add-box-line-pth.png"))); // NOI18N
         addProducts.setText("Add Products");
         addProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addProducts.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,7 +104,8 @@ public class AddNotes extends javax.swing.JFrame {
 
         orders.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         orders.setForeground(new java.awt.Color(255, 255, 255));
-        orders.setText("Orders");
+        orders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-list-3-line_pth.png"))); // NOI18N
+        orders.setText("Log Transaksi");
         orders.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         orders.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -112,6 +115,7 @@ public class AddNotes extends javax.swing.JFrame {
 
         schdule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         schdule.setForeground(new java.awt.Color(255, 255, 255));
+        schdule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-line.png"))); // NOI18N
         schdule.setText("Schedule");
         schdule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         schdule.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -121,8 +125,11 @@ public class AddNotes extends javax.swing.JFrame {
         });
 
         notes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        notes.setForeground(new java.awt.Color(255, 255, 255));
+        notes.setForeground(new java.awt.Color(71, 141, 241));
+        notes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        notes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/sticky-note-line.png"))); // NOI18N
         notes.setText("Notes");
+        notes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 141, 241)));
         notes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -132,6 +139,7 @@ public class AddNotes extends javax.swing.JFrame {
 
         myprofile.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         myprofile.setForeground(new java.awt.Color(255, 255, 255));
+        myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/user-line-pth.png"))); // NOI18N
         myprofile.setText("My Profile");
         myprofile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         myprofile.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -157,33 +165,38 @@ public class AddNotes extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addProducts)
-                            .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orders)
-                            .addComponent(schdule)
-                            .addComponent(notes)
-                            .addComponent(myprofile)))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addProducts)
+                                    .addComponent(orders)
+                                    .addComponent(schdule)
+                                    .addComponent(myprofile)
+                                    .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addComponent(jButton25)))
+                        .addGap(0, 77, Short.MAX_VALUE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jButton25)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(notes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(48, 48, 48)
                 .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addComponent(addProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(orders)
                 .addGap(38, 38, 38)
                 .addComponent(schdule)
-                .addGap(44, 44, 44)
-                .addComponent(notes)
-                .addGap(43, 43, 43)
+                .addGap(30, 30, 30)
+                .addComponent(notes, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(myprofile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton25)
@@ -362,9 +375,9 @@ public class AddNotes extends javax.swing.JFrame {
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -444,16 +457,6 @@ public class AddNotes extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_addProductsMouseClicked
 
-    private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
-        // TODO add your handling code here:
-        ordersFrame = new Orders();
-        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        ordersFrame.setVisible(true);
-    
-        // Menutup form dashboard
-        this.setVisible(false);
-    }//GEN-LAST:event_ordersMouseClicked
-
     private void schduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_schduleMouseClicked
         // TODO add your handling code here:
         scheduleFrame = new Schedule();
@@ -518,6 +521,16 @@ public class AddNotes extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_btnDeleteMouseClicked
+
+    private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
+        // TODO add your handling code here:
+        ordersFrame = new Orders();
+        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ordersFrame.setVisible(true);
+
+        // Menutup form dashboard
+        this.setVisible(false);
+    }//GEN-LAST:event_ordersMouseClicked
 
     public final void setTable() {
         tableModel = new DefaultTableModel(
