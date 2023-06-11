@@ -90,6 +90,7 @@ public class Schedule extends javax.swing.JFrame {
 
         dashboard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/dashboard-line_pth.png"))); // NOI18N
         dashboard.setText("Dashboard");
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dashboard.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -100,6 +101,7 @@ public class Schedule extends javax.swing.JFrame {
 
         addProducts.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addProducts.setForeground(new java.awt.Color(255, 255, 255));
+        addProducts.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/add-box-line-pth.png"))); // NOI18N
         addProducts.setText("Add Products");
         addProducts.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addProducts.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -110,7 +112,8 @@ public class Schedule extends javax.swing.JFrame {
 
         orders.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         orders.setForeground(new java.awt.Color(255, 255, 255));
-        orders.setText("Orders");
+        orders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-list-3-line_pth.png"))); // NOI18N
+        orders.setText("Log Transaksi");
         orders.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         orders.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,12 +122,16 @@ public class Schedule extends javax.swing.JFrame {
         });
 
         schedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        schedule.setForeground(new java.awt.Color(255, 255, 255));
+        schedule.setForeground(new java.awt.Color(71, 141, 241));
+        schedule.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        schedule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-check-line.png"))); // NOI18N
         schedule.setText("Schedule");
+        schedule.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 141, 241)));
         schedule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         notes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         notes.setForeground(new java.awt.Color(255, 255, 255));
+        notes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-line.png"))); // NOI18N
         notes.setText("Notes");
         notes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -135,6 +142,7 @@ public class Schedule extends javax.swing.JFrame {
 
         myProfile.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         myProfile.setForeground(new java.awt.Color(255, 255, 255));
+        myProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/user-line-pth.png"))); // NOI18N
         myProfile.setText("My Profile");
         myProfile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         myProfile.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -160,31 +168,36 @@ public class Schedule extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addProducts)
-                            .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orders)
-                            .addComponent(schedule)
-                            .addComponent(notes)
-                            .addComponent(myProfile)))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addProducts)
+                                    .addComponent(orders)
+                                    .addComponent(notes)
+                                    .addComponent(myProfile)
+                                    .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(jButton25)))
+                        .addGap(0, 78, Short.MAX_VALUE))
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(63, 63, 63)
-                        .addComponent(jButton25)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(schedule, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(40, 40, 40)
                 .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(26, 26, 26)
                 .addComponent(addProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(orders)
                 .addGap(38, 38, 38)
-                .addComponent(schedule)
-                .addGap(44, 44, 44)
+                .addComponent(schedule, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addComponent(notes)
                 .addGap(43, 43, 43)
                 .addComponent(myProfile)
@@ -457,16 +470,6 @@ public class Schedule extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_addProductsMouseClicked
 
-    private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
-        // TODO add your handling code here:
-        ordersFrame = new Orders();
-        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        ordersFrame.setVisible(true);
-    
-        // Menutup form dashboard
-        this.setVisible(false);
-    }//GEN-LAST:event_ordersMouseClicked
-
     private void btnAddMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddMouseClicked
         // TODO add your handling code here:
         SchedullingRequest request = new SchedullingRequest();
@@ -517,6 +520,16 @@ public class Schedule extends javax.swing.JFrame {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
+        // TODO add your handling code here:
+        ordersFrame = new Orders();
+        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ordersFrame.setVisible(true);
+
+        // Menutup form dashboard
+        this.setVisible(false);
+    }//GEN-LAST:event_ordersMouseClicked
 
     public final void setTable() {
         tableModel = new DefaultTableModel(

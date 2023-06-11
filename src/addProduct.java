@@ -1,3 +1,9 @@
+
+import app.models.Schedulling;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+import resource.implement.SchedullingImplement;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -9,7 +15,16 @@
  * @author AkbarAbe
  */
 public class addProduct extends javax.swing.JFrame {
-
+    private Dashboard dashboardFrame;
+    private addProduct addProductFrame;
+    private Orders ordersFrame;
+    private Schedule scheduleFrame;
+    private AddNotes noteFrame;
+    private Profil profileFrame;
+    private SchedullingImplement service;
+    private DefaultTableModel tableModel;
+    private Schedulling[] listSchedulling;
+    private Schedulling updateSchedulling;
     /**
      * Creates new form addProducts
      */
@@ -101,6 +116,7 @@ public class addProduct extends javax.swing.JFrame {
 
         dashboardPage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboardPage.setForeground(new java.awt.Color(255, 255, 255));
+        dashboardPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/dashboard-line_pth.png"))); // NOI18N
         dashboardPage.setText("Dashboard");
         dashboardPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -109,8 +125,11 @@ public class addProduct extends javax.swing.JFrame {
         });
 
         productPage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        productPage.setForeground(new java.awt.Color(255, 255, 255));
+        productPage.setForeground(new java.awt.Color(71, 141, 241));
+        productPage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        productPage.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\add-box-line (1).png")); // NOI18N
         productPage.setText("Add Products");
+        productPage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 141, 241)));
         productPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 productPageMouseClicked(evt);
@@ -119,7 +138,8 @@ public class addProduct extends javax.swing.JFrame {
 
         ordersPage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         ordersPage.setForeground(new java.awt.Color(255, 255, 255));
-        ordersPage.setText("Orders");
+        ordersPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-list-3-line_pth.png"))); // NOI18N
+        ordersPage.setText("Log Transaksi");
         ordersPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ordersPageMouseClicked(evt);
@@ -128,6 +148,7 @@ public class addProduct extends javax.swing.JFrame {
 
         schedulePage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         schedulePage.setForeground(new java.awt.Color(255, 255, 255));
+        schedulePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/calendar-line.png"))); // NOI18N
         schedulePage.setText("Schedule");
         schedulePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -137,6 +158,7 @@ public class addProduct extends javax.swing.JFrame {
 
         notesPage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notesPage.setForeground(new java.awt.Color(255, 255, 255));
+        notesPage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-line.png"))); // NOI18N
         notesPage.setText("Notes");
         notesPage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -146,6 +168,7 @@ public class addProduct extends javax.swing.JFrame {
 
         profilePage.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         profilePage.setForeground(new java.awt.Color(255, 255, 255));
+        profilePage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/user-line-pth.png"))); // NOI18N
         profilePage.setText("My Profile");
         profilePage.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -170,18 +193,23 @@ public class addProduct extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jButton25))
-                    .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(productPage)
-                            .addComponent(dashboardPage, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ordersPage)
-                            .addComponent(schedulePage)
-                            .addComponent(notesPage)
-                            .addComponent(profilePage))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jButton25))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ordersPage)
+                                    .addComponent(schedulePage)
+                                    .addComponent(notesPage)
+                                    .addComponent(profilePage)
+                                    .addComponent(dashboardPage))))
+                        .addGap(0, 72, Short.MAX_VALUE))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(productPage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,8 +217,8 @@ public class addProduct extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addComponent(dashboardPage, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(productPage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addComponent(productPage, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
                 .addComponent(ordersPage)
                 .addGap(38, 38, 38)
                 .addComponent(schedulePage)
@@ -198,7 +226,7 @@ public class addProduct extends javax.swing.JFrame {
                 .addComponent(notesPage)
                 .addGap(43, 43, 43)
                 .addComponent(profilePage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addComponent(jButton25)
                 .addGap(20, 20, 20))
         );
@@ -355,7 +383,7 @@ public class addProduct extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1208, Short.MAX_VALUE)
+            .addGap(0, 1218, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -437,34 +465,6 @@ public class addProduct extends javax.swing.JFrame {
         // Menutup form dashboard
         this.setVisible(false);
     }//GEN-LAST:event_productPageMouseClicked
-
-    private void ordersPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersPageMouseClicked
-        // TODO add your handling code here:
-        String clickedLabel = ordersPage.getText();
-
-        if (clickedLabel.equals("Dashboard")) {
-            Dashboard dashboardFrame = new Dashboard();
-            dashboardFrame.setVisible(true);
-        } else if (clickedLabel.equals("Add Products")) {
-            addProduct addProductFrame = new addProduct();
-            addProductFrame.setVisible(true);
-        } else if (clickedLabel.equals("Orders")) {
-            Orders OrdersFrame = new Orders();
-            OrdersFrame.setVisible(true);
-        } else if (clickedLabel.equals("Schedule")) {
-            Schedule ScheduleFrame = new Schedule();
-            ScheduleFrame.setVisible(true);
-        } else if (clickedLabel.equals("Notes")) {
-            AddNotes noteFrame = new AddNotes();
-            noteFrame.setVisible(true);
-        } else if (clickedLabel.equals("My Profile")) {
-            Profil profileFrame = new Profil();
-            profileFrame.setVisible(true);
-        }
-
-        // Menutup form dashboard
-        this.setVisible(false);
-    }//GEN-LAST:event_ordersPageMouseClicked
 
     private void schedulePageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_schedulePageMouseClicked
         // TODO add your handling code here:
@@ -565,6 +565,16 @@ public class addProduct extends javax.swing.JFrame {
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton29ActionPerformed
+
+    private void ordersPageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersPageMouseClicked
+        // TODO add your handling code here:
+        ordersFrame = new Orders();
+        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ordersFrame.setVisible(true);
+
+        // Menutup form dashboard
+        this.setVisible(false);
+    }//GEN-LAST:event_ordersPageMouseClicked
 
     /**
      * @param args the command line arguments

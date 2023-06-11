@@ -62,12 +62,16 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel17.setForeground(new java.awt.Color(255, 255, 255));
 
         dashboard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        dashboard.setForeground(new java.awt.Color(71, 141, 241));
+        dashboard.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/dashboard-line.png"))); // NOI18N
         dashboard.setText("Dashboard");
+        dashboard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(71, 141, 241)));
         dashboard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         addProduct.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         addProduct.setForeground(new java.awt.Color(255, 255, 255));
+        addProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/add-box-line-pth.png"))); // NOI18N
         addProduct.setText("Add Products");
         addProduct.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addProduct.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -78,7 +82,8 @@ public class Dashboard extends javax.swing.JFrame {
 
         orders.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         orders.setForeground(new java.awt.Color(255, 255, 255));
-        orders.setText("Orders");
+        orders.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/file-list-3-line_pth.png"))); // NOI18N
+        orders.setText("Log Transaksi");
         orders.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         orders.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -88,6 +93,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         schedule.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         schedule.setForeground(new java.awt.Color(255, 255, 255));
+        schedule.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\calendar-line.png")); // NOI18N
         schedule.setText("Schedule");
         schedule.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         schedule.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,6 +104,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         notes.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         notes.setForeground(new java.awt.Color(255, 255, 255));
+        notes.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\file-line.png")); // NOI18N
         notes.setText("Notes");
         notes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         notes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,6 +115,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         profile.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         profile.setForeground(new java.awt.Color(255, 255, 255));
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/app/resources/icon/user-line-pth.png"))); // NOI18N
         profile.setText("My Profile");
         profile.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         profile.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -133,18 +141,23 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jButton25))
-                    .addGroup(jPanel17Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(addProduct)
-                            .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(orders)
-                            .addComponent(schedule)
-                            .addComponent(notes)
-                            .addComponent(profile))))
-                .addContainerGap(73, Short.MAX_VALUE))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(74, 74, 74)
+                                .addComponent(jButton25))
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addProduct)
+                                    .addComponent(orders)
+                                    .addComponent(schedule)
+                                    .addComponent(notes)
+                                    .addComponent(profile))))
+                        .addGap(0, 67, Short.MAX_VALUE))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(dashboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,7 +174,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(notes)
                 .addGap(43, 43, 43)
                 .addComponent(profile)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton25)
                 .addGap(20, 20, 20))
         );
@@ -170,10 +183,13 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(71, 141, 241));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\shopping-cart-2-line.png")); // NOI18N
         jLabel1.setText("Total Orders");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("0");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -199,13 +215,17 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(71, 141, 241));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\wallet-3-line.png")); // NOI18N
         jLabel3.setText("Total Income");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Rp");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("0");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -215,7 +235,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(113, 113, 113)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(49, 49, 49)
                 .addComponent(jLabel5)
@@ -234,10 +254,13 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(71, 141, 241));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\andhi\\Downloads\\Compressed\\instance-line.png")); // NOI18N
         jLabel6.setText("Available Products");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("0");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -247,7 +270,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(114, 114, 114)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
                 .addComponent(jLabel7)
                 .addGap(95, 95, 95))
         );
@@ -258,7 +281,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -266,23 +289,23 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addGap(44, 44, 44)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(34, 34, 34)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -322,16 +345,6 @@ public class Dashboard extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_addProductMouseClicked
 
-    private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
-        // TODO add your handling code here:
-        ordersFrame = new Orders();
-        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        ordersFrame.setVisible(true);
-    
-        // Menutup form dashboard
-        this.setVisible(false);
-    }//GEN-LAST:event_ordersMouseClicked
-
     private void scheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleMouseClicked
         // TODO add your handling code here:
         scheduleFrame = new Schedule();
@@ -361,6 +374,16 @@ public class Dashboard extends javax.swing.JFrame {
         // Menutup form dashboard
         this.setVisible(false);
     }//GEN-LAST:event_profileMouseClicked
+
+    private void ordersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersMouseClicked
+        // TODO add your handling code here:
+        ordersFrame = new Orders();
+        ordersFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        ordersFrame.setVisible(true);
+
+        // Menutup form dashboard
+        this.setVisible(false);
+    }//GEN-LAST:event_ordersMouseClicked
 
     /**
      * @param args the command line arguments
