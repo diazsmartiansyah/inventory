@@ -7,6 +7,7 @@ package api.routes;
 import api.requests.BarangRequest;
 import api.requests.AuthRequest;
 import api.requests.NotesRequest;
+import api.requests.PedagangRequest;
 import api.requests.SchedullingRequest;
 import api.requests.TransaksiRequest;
 import api.responses.ApiResponse;
@@ -49,6 +50,9 @@ public interface StoreMasterRoute {
     //Route Pedagang
     @POST("pedagang/detail/{id}")
     Call<ApiResponse> detailPedagang(@Path("id") int id);
+    
+    @POST("pedagang/update/{id}")
+    Call<ApiResponse> updatePedagang(@Body PedagangRequest pedagangRequest, @Path("id") int id);
     
     //Route Customer
     @POST("customer/detail/{id}")

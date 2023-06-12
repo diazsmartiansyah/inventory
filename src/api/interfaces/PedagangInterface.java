@@ -5,6 +5,8 @@
 package api.interfaces;
 
 import app.models.Pedagang;
+import api.requests.PedagangRequest;
+
 
 /**
  *
@@ -12,4 +14,7 @@ import app.models.Pedagang;
  */
 public interface PedagangInterface {
     public Pedagang getDetail(int id);
+    public Pedagang updateProfile(PedagangRequest pedagangRequest);
 }
+
+
