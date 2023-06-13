@@ -4,6 +4,7 @@
  */
 package app.helpers;
 
+import api.requests.PedagangRequest;
 import api.services.AuthService;
 import api.services.PedagangService;
 import app.models.Pedagang;
@@ -41,6 +42,14 @@ public class SessionHelper {
         PedagangService service = new PedagangService();
         User user = getCurrentUser();
         Pedagang pedagang = service.getDetail(user.getPedagang_id());
+        
+        return pedagang;
+    }
+    
+    public static Pedagang updateProfile(PedagangRequest pedagangRequest) {
+        PedagangService service = new PedagangService();
+        User user = getCurrentUser();
+        Pedagang pedagang = service.updateProfile(pedagangRequest);
         
         return pedagang;
     }

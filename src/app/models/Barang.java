@@ -16,6 +16,7 @@ public class Barang {
     
     @SerializedName("kode_barang")
     private String kodeBarang;
+    
     @SerializedName("pedagang_id")
     private int pedagangId;
     

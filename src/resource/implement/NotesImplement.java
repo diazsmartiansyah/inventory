@@ -36,13 +36,14 @@ public class NotesImplement implements NotesInterface {
     
     @Override
     public Notes store(NotesRequest notesRequest) {
-        Notes barang = new Notes();
+        Notes notes = new Notes();
         try {
-            barang = service.store(notesRequest);
+            notes = service.store(notesRequest);
         } catch (Exception e) {
-             e.printStackTrace();       }
+             e.printStackTrace();       
+        }
         
-        return barang;
+        return notes;
     }
 
     @Override

@@ -5,6 +5,7 @@
 package api.services;
 
 import api.interfaces.PedagangInterface;
+import api.requests.PedagangRequest;
 import api.responses.ApiResponse;
 import api.routes.StoreMasterRoute;
 import app.helpers.ApiHelper;
@@ -34,6 +35,15 @@ public class PedagangService implements PedagangInterface {
         ApiResponse response = ApiHelper.hitApi(call);
         Pedagang pedagang = (Pedagang) response.getData(Pedagang.class);
 
+        return pedagang;
+    }
+
+    @Override
+    public Pedagang updateProfile(PedagangRequest pedagangRequest) {
+        Call<ApiResponse> call = route.updatePedagang(pedagangRequest, pedagangRequest.getId());
+        ApiResponse response = ApiHelper.hitApi(call);
+        Pedagang pedagang = (Pedagang) response.getData(Pedagang.class);
+        
         return pedagang;
     }
     

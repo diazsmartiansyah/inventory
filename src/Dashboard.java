@@ -1,4 +1,7 @@
+import api.requests.BarangRequest;
 import javax.swing.JFrame;
+import resource.implement.BarangImplement;
+import app.models.Barang;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -18,14 +21,22 @@ public class Dashboard extends javax.swing.JFrame {
     private Schedule scheduleFrame;
     private AddNotes noteFrame;
     private Profil profileFrame;
+    private BarangImplement service;
             
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
-     
-    }
+        
+        service = new BarangImplement();
+        
+        Barang[] barang = service.getList(new BarangRequest());
+        
+        jumlahProduk.setText(String.valueOf(barang.length));
+        
+        
+     }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +54,7 @@ public class Dashboard extends javax.swing.JFrame {
         schedule = new javax.swing.JLabel();
         notes = new javax.swing.JLabel();
         profile = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -54,7 +65,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jumlahProduk = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,13 +135,18 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(71, 141, 241));
-        jButton25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(255, 255, 255));
-        jButton25.setText("Sign Out");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        logout.setBackground(new java.awt.Color(71, 141, 241));
+        logout.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setText("Sign Out");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+        });
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
 
@@ -144,7 +160,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addGap(74, 74, 74)
-                                .addComponent(jButton25))
+                                .addComponent(logout))
                             .addGroup(jPanel17Layout.createSequentialGroup()
                                 .addGap(44, 44, 44)
                                 .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +191,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(profile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton25)
+                .addComponent(logout)
                 .addGap(20, 20, 20))
         );
 
@@ -189,7 +205,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("0");
+        jLabel2.setText("1");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -224,7 +240,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("0");
+        jLabel5.setText("10000");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -256,9 +272,9 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Available Products");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("0");
+        jumlahProduk.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jumlahProduk.setForeground(new java.awt.Color(255, 255, 255));
+        jumlahProduk.setText("5");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -268,7 +284,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(114, 114, 114)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 288, Short.MAX_VALUE)
-                .addComponent(jLabel7)
+                .addComponent(jumlahProduk)
                 .addGap(95, 95, 95))
         );
         jPanel4Layout.setVerticalGroup(
@@ -277,7 +293,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(66, 66, 66)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
-                    .addComponent(jLabel7))
+                    .addComponent(jumlahProduk))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
@@ -327,10 +343,10 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
 //        this.setVisible(true);
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
     private void addProductMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addProductMouseClicked
         // TODO add your handling code here:
@@ -380,7 +396,14 @@ public class Dashboard extends javax.swing.JFrame {
 
         // Menutup form dashboard
         this.setVisible(false);
+        
+        
     }//GEN-LAST:event_ordersMouseClicked
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_logoutMouseClicked
 
     /**
      * @param args the command line arguments
@@ -423,19 +446,19 @@ public class Dashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addProduct;
     private javax.swing.JLabel dashboard;
-    private javax.swing.JButton jButton25;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jumlahProduk;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel notes;
     private javax.swing.JLabel orders;
     private javax.swing.JLabel profile;

@@ -65,7 +65,7 @@ public class SchedullingService implements SchedullingInterface {
 
     @Override
     public boolean delete(int id) {
-        Call<ApiResponse> call = route.deleteNotes(id);
+        Call<ApiResponse> call = route.deleteSchedulling(id);
         ApiResponse response = ApiHelper.hitApi(call);
 
         return response.isStatus();

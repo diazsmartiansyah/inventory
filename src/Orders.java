@@ -53,7 +53,7 @@ public class Orders extends javax.swing.JFrame {
         schedule = new javax.swing.JLabel();
         notes = new javax.swing.JLabel();
         myProfile = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -131,13 +131,13 @@ public class Orders extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(71, 141, 241));
-        jButton25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(255, 255, 255));
-        jButton25.setText("Sign Out");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        logout.setBackground(new java.awt.Color(71, 141, 241));
+        logout.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setText("Sign Out");
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
 
@@ -162,7 +162,7 @@ public class Orders extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(73, 73, 73)
-                .addComponent(jButton25)
+                .addComponent(logout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -181,7 +181,7 @@ public class Orders extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addComponent(myProfile)
                 .addGap(126, 126, 126)
-                .addComponent(jButton25)
+                .addComponent(logout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -272,9 +272,9 @@ public class Orders extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
     private void scheduleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scheduleMouseClicked
         // TODO add your handling code here:
@@ -400,12 +400,12 @@ public class Orders extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addProducts;
     private javax.swing.JLabel dashboard;
-    private javax.swing.JButton jButton25;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel myProfile;
     private javax.swing.JLabel notes;
     private javax.swing.JLabel orders;

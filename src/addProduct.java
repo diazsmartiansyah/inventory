@@ -699,7 +699,6 @@ public class addProduct extends javax.swing.JFrame {
         
         listProducts = service.getList(request);
         
-        System.out.println(listProducts);
         for(Barang barang : listProducts) {
             if(barang == null) {
                 continue;

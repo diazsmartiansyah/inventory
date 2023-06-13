@@ -60,7 +60,7 @@ public class AddNotes extends javax.swing.JFrame {
         schdule = new javax.swing.JLabel();
         notes = new javax.swing.JLabel();
         myprofile = new javax.swing.JLabel();
-        jButton25 = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         tableNotes = new javax.swing.JTable();
@@ -149,13 +149,13 @@ public class AddNotes extends javax.swing.JFrame {
             }
         });
 
-        jButton25.setBackground(new java.awt.Color(71, 141, 241));
-        jButton25.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(255, 255, 255));
-        jButton25.setText("Sign Out");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
+        logout.setBackground(new java.awt.Color(71, 141, 241));
+        logout.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setText("Sign Out");
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
 
@@ -180,7 +180,7 @@ public class AddNotes extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(jPanel17Layout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addComponent(jButton25)
+                .addComponent(logout)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
@@ -199,7 +199,7 @@ public class AddNotes extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(myprofile)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton25)
+                .addComponent(logout)
                 .addGap(42, 42, 42))
         );
 
@@ -397,7 +397,7 @@ public class AddNotes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
         int option = JOptionPane.showConfirmDialog(null, "Anda Yakin Ingin LogOut?","Perhatian", JOptionPane.YES_NO_OPTION);
         if (option == 0){
@@ -407,7 +407,7 @@ public class AddNotes extends javax.swing.JFrame {
         } else {
             
         }
-    }//GEN-LAST:event_jButton25ActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
     private void judulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_judulActionPerformed
         // TODO add your handling code here:
@@ -545,7 +545,6 @@ public class AddNotes extends javax.swing.JFrame {
         
         listNotes = service.getList(request);
         
-        System.out.println(listNotes);
         for(Notes notes : listNotes) {
             if(notes == null) {
                 continue;
@@ -654,7 +653,6 @@ public class AddNotes extends javax.swing.JFrame {
     private javax.swing.JButton btnUpdates;
     private javax.swing.JTextArea catatan;
     private javax.swing.JLabel dashboard;
-    private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -664,6 +662,7 @@ public class AddNotes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField judul;
+    private javax.swing.JButton logout;
     private javax.swing.JLabel myprofile;
     private javax.swing.JLabel notes;
     private javax.swing.JLabel orders;

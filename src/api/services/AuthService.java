@@ -37,10 +37,7 @@ public class AuthService implements AuthInterface {
         AuthRequest loginRequest = new AuthRequest(username, password);
         Call<ApiResponse> call = route.login(loginRequest);
         ApiResponse response = ApiHelper.hitApi(call);
-        
         Token token = (Token) response.getData(Token.class);
-        System.out.println("Debbug : " + token.getUser().getName());
-//        Token token = (Token) response.getData();
         
         return token;
     }

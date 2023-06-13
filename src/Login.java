@@ -11,13 +11,13 @@ import resource.implement.AuthImplement;
  */
 public class Login extends javax.swing.JFrame {
 
-    private final AuthImplement authUtils;
+    private final AuthImplement service;
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
-        authUtils = new AuthImplement();
+        service = new AuthImplement();
     }
 
     /**
@@ -167,7 +167,7 @@ public class Login extends javax.swing.JFrame {
             String password     = jPasswordField1.getText();
             
             //query dan koneksi database
-            boolean status = authUtils.login(username, password);
+            boolean status = service.login(username, password);
             
             if(status) {
                 JOptionPane.showMessageDialog(this, "Login Berhasil");
